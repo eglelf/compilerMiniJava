@@ -1,0 +1,14 @@
+Colocar o jsyntaxpane-0.9.5-b29.jar na biblioteca
+Executar e vai aparecer uma janela de erro, dar ok;
+É preciso fazer com que na hora que ler o token LINE não mostrá-lo na tabela de ID
+Tá aparecendo:  |      ID      |       Lexema      |
+                |     LINE     |                   |
+                |     INTT     |        INT        |
+
+Tem que deixar: |      ID      |       Lexema      |
+                |     INTT     |        INT        |
+
+Tentar fazer com que seja sublinhado onde der erro... Testar com o & em qualquer
+lugar
+LineCounter vai contando as linhas, então dá pra sublinhar na linha
+LineCounter-1
