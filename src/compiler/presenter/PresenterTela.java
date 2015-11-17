@@ -5,6 +5,10 @@
  */
 package compiler.presenter;
 
+import Producoes.ClassWithTokens;
+import Producoes.ProcessadorProducao;
+import Producoes.Production;
+import Producoes.produtores.*;
 import compiler.Arquivo;
 import compiler.View.ViewTela;
 import java.awt.event.ActionEvent;
@@ -25,6 +29,8 @@ public class PresenterTela {
     private DefaultTableModel tmTokens;
     private DefaultTableModel tmErros;
     private Arquivo arquivo;
+    private ClassWithTokens tokens = ClassWithTokens.getClassWithTokens();
+    private ArrayList<Production> producoes = new ArrayList<>();
 
     public PresenterTela() {
         iniciarTela();
@@ -45,6 +51,7 @@ public class PresenterTela {
                     ArrayList<String> texto = arquivo.lerArquivo();
                     exibirNaTabelaDeTokens(texto);
                     exibirNaTabelaDeErros(texto);
+                    analisarSintaxe();
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
@@ -78,6 +85,7 @@ public class PresenterTela {
         while (it.hasNext()) {
             String p = it.next();
             String[] linha = p.split("#");
+            tokens.addToken(linha[0]);
 
             if (!linha[0].equals("ERROR") && !linha[0].equals("LINE")) {
                 tmTokens.addRow(new Object[]{linha[0], linha[1]});
@@ -101,18 +109,28 @@ public class PresenterTela {
 
     private ArrayList<String> analisarTexto() {
         try {
-
             arquivo = new Arquivo("src/compiler/arq1.txt");
             arquivo.gravarArquivo(view.getTxtAreaAlgoritmo().getText());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return null;
-
     }
 
     public ArrayList<String> getTokens() {
         return analisarTexto();
+    }
+
+    public ClassWithTokens getTokenList() {
+        return this.tokens;
+    }
+
+    public void analisarSintaxe() {
+
+        Program programProduction = new Program(tokens);
+        int codigo = programProduction.handle(tokens);
+        System.out.println("Cod: " + codigo);
+
     }
 
 }

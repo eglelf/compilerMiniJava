@@ -19,6 +19,7 @@ public String lexema;
 %%
 {BLANK}|{TraditionalComment}|{LineComment} {/*Ignore*/}
 
+(\".*\") {lexema=yytext(); return STRING;}
 ("^(-"{N}+")")|{N}+ [lL] {lexema=yytext(); return LONG;}
 ("^(-"{N}+")")|{N}+ {lexema=yytext(); return INT;}
 ({FLit1}|{FLit2}|{FLit3}) [fF] {lexema=yytext(); return FLOAT;}
@@ -26,15 +27,25 @@ public String lexema;
 
 "=" {return ASSIGN;}
 "+" {return SUM;}
+"+=" {return SUMASSIGN;}
 "-" {return MINUS;}
+"-=" {return MINUSASSIGN;}
 "*" {return MULT;}
+"*=" {return MULTASSIGN;}
 "/" {return DIV;}
+"/=" {return DIVASSIGN;}
 "==" {return EQUAL;}
 "||" {return OR;}
 "&&" {return AND;}
+"&" {return ANDBIN;}
 "!=" {return NOT;}
 "<" {return LT;}
+"<=" {return LTE;}
 ">" {return GT;}
+">=" {return GTE;}
+"%" {return MOD;}
+"%=" {return MODASSIGN;}
+
 "null" {return NULL;}
 "abstract" {return ABSTRACT;} 
 "boolean" {return BOOLEANT;}

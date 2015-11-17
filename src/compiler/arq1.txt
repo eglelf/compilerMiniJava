@@ -1,2 +1,6 @@
-a.
-b.
+package com;
+
+public class Teste{
+   int a = 5;  
+   
+}

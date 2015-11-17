@@ -1,0 +1,156 @@
+========= RESERVED WORDS ERRORS CODES =========
+000 - Compilation successful
+001 - Expected ';'
+002 - Expected 'package'
+003 - Expected 'import'
+004 - Expected 'class'
+005 - Expected class modifier (public, abstract, final)
+006 - Expected '{'
+007 - Expected '}'
+008 - Expected modifier (public, protected, private, static, final)
+009 - Expected ','
+010 - Expected '='
+011 - Expected '('
+012 - Expected ')'
+013 - Expected type (byte, short, int, long, char, float, double, boolean, void)
+014 - Expected ':'
+015 - Expected 'if'
+016 - Expected 'else'
+017 - Expected 'while'
+018 - Expected 'do'
+019 - Expected 'break'
+020 - Expected 'continue'
+021 - Expected 'return'
+022 - Expected 'try'
+023 - Expected 'catch'
+024 - Expected 'finally'
+025 - Missing assignment operator
+026 - Expected '||'
+027 - Expected '&&'
+028 - Missing comparation operator
+029 - Missing math operator
+030 - Expected 'super'
+031 - Expected '.'
+032 - Expected 'new'
+
+========= PRODUCTION ERRORS CODES =========
+1001 - Missing Identifier
+1002 - Statement error, there is no production to go ahead
+1003 - StatementExpression, there is no production to go ahead
+1004 - Missing class body
+
+========= ACCEPT METHOD =========
+
+AdditiveExpression                  | Unnecessary   
+ArgumentList                        | Done!
+Assignment                          | Done!
+AssignmentOperator                  | Unnecessary
+Block                               | Done!
+BlockStatement                      | Done!
+BlockStatements                     | Done!
+BreakStatement                      | Done!
+CatchClause                         | Done!
+CatcheStatement                     | Unnecessary
+Catches                             | Unnecessary
+ClassBody                           | Unnecessary
+ClassBodyDeclaration                | Done!
+ClassBodyDeclarations               | Done!
+ClassDeclaration                    | Done!
+ClassInstanceCreationExpression     | Done!
+ClassModifier                       | Unnecessary
+ComparationExpression               | Done!
+ContinueStatement                   | Done!
+DoStatement                         | Done!
+EmptyStatement                      | Unnecessary
+Expression                          | Done!
+Expression2                         | Unnecessary
+FieldDeclaration                    | Done!
+FieldMethodDeclaration              | Done!
+Finally                             | Unnecessary
+FormalParameter                     | Done!
+FormalParameterList                 | Done!
+Identifier                          | Unnecessary
+IfStatement                         | Done!
+IfThenElseStatement                 | Unnecessary
+ImportDeclaration                   | Done!
+ImportDeclarations                  | Done!
+LabeledStatement                    | Unnecessary
+LocalVariableDeclaration            | Done!
+MethodDeclaration                   | Done!
+MethodBody                          | Unnecessary
+MethodDeclarator                    | Done!
+MethodInvocation                    | Done!
+Modifier                            | Unnecessary
+MultiplicativeExpression            | Unnecessary
+OperationalExpression               | Done!
+PackageDeclaration                  | Done!
+Program                             | Unnecessary
+RelationalExpression                | Unnecessary
+ReturnStatement                     | Done!
+Statement                           | Unnecessary
+StatementExpression                 | Unnecessary
+Term                                | Done!
+TryStatement                        | Unnecessary
+Type                                | Unnecessary
+UnaryExpression                     | Done!
+VariableDeclarator                  | Done!
+VariableDeclarators                 | Done!
+WhileStatement                      | Done!
+
+========= PRODUCTIONS TEST =========
+
+AdditiveExpression                  | Not tested yet   
+ArgumentList                        | Not tested yet 
+Assignment                          | Not tested yet 
+AssignmentOperator                  | Not tested yet 
+Block                               | Not tested yet 
+BlockStatement                      | Not tested yet 
+BlockStatements                     | Not tested yet 
+BreakStatement                      | Not tested yet 
+CatchClause                         | Not tested yet 
+CatcheStatement                     | Not tested yet 
+Catches                             | Not tested yet 
+ClassBody                           | Not tested yet 
+ClassBodyDeclaration                | Not tested yet 
+ClassBodyDeclarations               | Not tested yet 
+ClassDeclaration                    | Not tested yet 
+ClassInstanceCreationExpression     | Not tested yet 
+ClassModifier                       | Not tested yet 
+ComparationExpression               | Not tested yet 
+ContinueStatement                   | Not tested yet 
+DoStatement                         | Not tested yet 
+EmptyStatement                      | Not tested yet 
+Expression                          | Not tested yet 
+Expression2                         | Not tested yet 
+FieldDeclaration                    | Not tested yet 
+FieldMethodDeclaration              | Not tested yet 
+Finally                             | Not tested yet 
+FormalParameter                     | Not tested yet 
+FormalParameterList                 | Not tested yet 
+Identifier                          | Not tested yet 
+IfStatement                         | Not tested yet 
+IfThenElseStatement                 | Not tested yet 
+ImportDeclaration                   | Not tested yet 
+ImportDeclarations                  | LOOP <<<<<<<<<<<<<<<<<<<< Problem right here!
+LabeledStatement                    | Not tested yet          ^
+LocalVariableDeclaration            | Not tested yet          ^
+MethodDeclaration                   | Not tested yet          ^
+MethodBody                          | Not tested yet          ^
+MethodDeclarator                    | Not tested yet          ^
+MethodInvocation                    | Not tested yet          ^
+Modifier                            | Not tested yet          ^
+MultiplicativeExpression            | Not tested yet          ^
+OperationalExpression               | Not tested yet          ^ 
+PackageDeclaration                  | OKAY!                   ^
+Program                             | Shit happens... >>>>>>>>>
+RelationalExpression                | Not tested yet 
+ReturnStatement                     | Not tested yet 
+Statement                           | Not tested yet 
+StatementExpression                 | Not tested yet 
+Term                                | Not tested yet 
+TryStatement                        | Not tested yet 
+Type                                | Not tested yet 
+UnaryExpression                     | Not tested yet 
+VariableDeclarator                  | Not tested yet 
+VariableDeclarators                 | Not tested yet 
+WhileStatement                      | Not tested yet 

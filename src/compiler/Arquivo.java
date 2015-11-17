@@ -41,12 +41,13 @@ public class Arquivo {
 
         int contIDs = 0;
         int lineCounter = 1;
+        boolean flagLine;
         while (true) {
             Token token = lexer.yylex();
             if (token == null) {
                 break;
             }
-
+            flagLine = true;
             switch (token) {
 
                 case SUM:
@@ -185,6 +186,9 @@ public class Arquivo {
                 case RETURN:
                     tokenName = "RETURN";
                     break;
+                case MOD:
+                    tokenName = "MOD";
+                    break;
                 case SHORTT:
                     tokenName = "SHORT";
                     break;
@@ -273,14 +277,42 @@ public class Arquivo {
                     tokenName = ",";
                     break;
                 case LINE:
+                    flagLine = false;
                     lineCounter++;
                     break;
-
+                case MULTASSIGN:
+                    tokenName = "MULTASSIGN";
+                    break;
+                case DIVASSIGN:
+                    tokenName = "DIVASSIGN";
+                    break;
+                case MODASSIGN:
+                    tokenName = "MODASSIGN";
+                    break;
+                case MINUSASSIGN:
+                    tokenName = "MINUSASSIGN";
+                    break;
+                case SUMASSIGN:
+                    tokenName = "SUMASSIGN";
+                    break;
+                case LTE:
+                    tokenName = "LTE";
+                    break;
+                case GTE:
+                    tokenName = "GTE";
+                    break;
+                case ANDBIN:
+                    tokenName = "ANDBIN";
+                    break;
+                case STRING:
+                    tokenName = "STRING";
+                    break;
                 default:
                     tokenName = lexer.lexema;
             }
-
-            result.add(token + "#" + tokenName);
+            if (flagLine) {
+                result.add(token + "#" + tokenName);
+            }
 
         }
         return result;
@@ -292,4 +324,5 @@ public class Arquivo {
         bf.write(texto);
         bf.close();
     }
+
 }

@@ -9,7 +9,7 @@ package Producoes;
  *
  * @author Avell B154 PLUS
  */
-public class Program {
-    
-    
+public interface HandleProdution {
+    public boolean accept(String token);
+    public int handle(ClassWithTokens tokens);
 }

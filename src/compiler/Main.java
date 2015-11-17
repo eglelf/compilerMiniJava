@@ -6,6 +6,7 @@
 package compiler; 
 
 import compiler.View.ViewTela;
+import compiler.presenter.CompilerConfiguracoes;
 import compiler.presenter.PresenterTela;
 import java.io.File;
 
@@ -21,7 +22,10 @@ public class Main {
     public static void main(String[] args) {
         String path = "src/compiler/Lexer.flex";
         generateLexer(path);
+        CompilerConfiguracoes.configurarCompilador();
+        
         PresenterTela tela = new PresenterTela();
+        
     }
 
     public static void generateLexer(String path) {
